@@ -18,8 +18,10 @@ Shape.prototype.get_totalLength = function () {
 	var length = 0;
 	if (this.type === 'Triangle') {
 		length = this.side1 + this.side2 + this.side3;
-	} else if (this.type == 'Square') {
+	} else if (this.type === 'Square') {
 		length = 4 * this.side;
+	} else if (this.type === "Pentagon") {
+		length = this.side1 + this.side2 + this.side3 + this.side4 + this.side5;
 	}
 	return length;
 };
@@ -82,8 +84,11 @@ var shape = new Shape("shape");
 
 //getting different types
 console.log(tri1.get_type());
+console.log(tri1.get_totalLength());
 console.log(square1.get_type());
+console.log(square1.get_totalLength());
 console.log(pent1.get_type());
+console.log(pent1.get_totalLength());
 console.log(shape);
 
 // Ensuring instanceof works as expected.
