@@ -1,4 +1,8 @@
 'use strict';
+const Square = require("./square.js");
+const Triangle = require("./triangle.js");
+const Pentagon = require("./pentagon.js");
+
 //construtor function for shapes, double checks of we put new while creating a "new shape"
 function Shape (type) {
 	if(!(this instanceof Shape)){
@@ -26,61 +30,23 @@ Shape.prototype.get_totalLength = function () {
 	return length;
 };
 
-//construtor function for new squares by creating a var square by using the Shape construtor and adding a side to the var and returning it to the new square.
-function Square (side) {
-	if(!(this instanceof Square)){
-		return new Square (side);
-	}
-
-	this.type = "Square";
-	this.side = side;
-};
-
 //slapping Shape stuff into Square 
 Square.prototype = new Shape();
 Square.prototype.construtor = Square;
-
-//construtor function for new triangle by creating a var triangle by using the Shape construtor and adding a side to the var and returning it to the new triangle.
-function Triangle (side1, side2, side3) {
-	if(!(this instanceof Triangle)){
-		return new Triangle (side1, side2, side3);
-	}
-
-	this.type = "Triangle";
-	this.side1 = side1;
-	this.side2 = side2;
-	this.side3 = side3;
-};
 
 //slapping Shape stuff into Triangle 
 Triangle.prototype = new Shape();
 Triangle.prototype.construtor = Triangle;
 
-//construtor function for new Pentagon by creating a var triangle by using the Shape construtor and adding a side to the var and returning it to the new pentagon.
-function Pentagon (side1, side2, side3, side4, side5) {
-	if(!(this instanceof Pentagon)){
-		return new Pentagon (side1, side2, side3, side4, side5);
-	}
-
-	this.type = "Pentagon";
-	this.side1 = side1;
-	this.side2 = side2;
-	this.side3 = side3;
-	this.side4 = side4;
-	this.side5 = side5;
-};
-
 //slapping Shape stuff into Triangle 
 Pentagon.prototype = new Shape();
 Pentagon.prototype.construtor = Pentagon;
-
 
 //creating variables of each constructor
 var tri1 = new Triangle(3,4,5);
 var square1 = new Square(4);
 var pent1 = new Pentagon(1,2,3,4,5);
 var shape = new Shape("shape");
-
 
 //getting different types
 console.log(tri1.get_type());

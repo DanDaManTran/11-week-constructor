@@ -11,17 +11,24 @@ of the three classes.
 
 ### Instructions
 
-1. Create a Shape constructor. It should have a property called type. Attach
+1. Create a github repository named "shapes". Initiated it with readme.md and a .gitignore. Select Node
+for the option when initiated with a .gitignore.
+
+For the remaining steps, each constructor should be in its own file. You should use `module.exports` to
+make a constructor available to other files. `require` will allow you to import or include one constructor
+in another file. We covered `module.exports` and `require` in week 10.
+
+2. Create a Shape constructor. It should have a property called type. Attach
    a function, called get_type, such that any Shape will be able to call it.
    Just fill it in with a return statement for now.
 
-2. Create Triangle and Square constructors. The triangles should set the
+3. Create Triangle and Square constructors. The triangles should set the
    properties side1, side2, and side3 for its side lengths.
    Do the same for Square.
 
-3. Set the prototype of both of these objects equal to a new Shape().
+4. Set the prototype of both of these objects equal to a new Shape().
 
-4. Turn your attention to Shape.get_type. This function should return
+5. Turn your attention to Shape.get_type. This function should return
    the type of the shape that it's called on--but only be defined on Shape.
 
    To do this, read about the Object.prototype.constructor property on MDN:
@@ -49,7 +56,7 @@ of the three classes.
         modifying your shape prototypes. Does the order in which you change
         the prototype and constructor properties matter?
 
-5. Create a Pentagon object, analogous to your other shapes. Your getType
+6. Create a Pentagon object, analogous to your other shapes. Your getType
    method should work without any additional work.
 
-6. **Challenge**. Reimplement your hierarchy using `Object.create`, without explicit `.prototype` references. This is *not* required for full credit on the homework.
+7. **Challenge**. Reimplement your hierarchy using `Object.create`, without explicit `.prototype` references. This is *not* required for full credit on the homework.
